@@ -1,12 +1,8 @@
-<html>
-<head>
-    <title>Microblog</title>
-</head>
-<body>
+{% extends 'main.html' %}
+{% block content %}
     <div>Edit!!!</div>
     <form action="{% url microblog:save_edit blog.id %}" method="post">
         {{  blog_form }}
         <input type="submit" />
     </form>
-</body>
-</html>
+{% endblock %}

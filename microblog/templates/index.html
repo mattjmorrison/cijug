@@ -1,13 +1,9 @@
-<html>
-<head>
-    <title>Microblog</title>
-</head>
-<body>
+{% extends 'main.html' %}
+{% block content %}
     <div>Hello!!!</div>
     <ul>
         {% for blog in blogs %}
         <li><a href="{% url microblog:edit blog.id %}">{{ blog }}</a></li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
