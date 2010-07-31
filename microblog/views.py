@@ -1,4 +1,4 @@
-from django import http
+from django import shortcuts
 
 def index(request):
-    return http.HttpResponse("Hello!!!")
+    return shortcuts.render_to_response('index.html')
