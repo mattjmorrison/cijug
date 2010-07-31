@@ -14,5 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    url(r'^news/', include('cijug.news.urls', namespace='news')),
     url(r'', include('cijug.microblog.urls', namespace='microblog')),
 )
