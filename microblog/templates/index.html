@@ -6,7 +6,7 @@
     <div>Hello!!!</div>
     <ul>
         {% for blog in blogs %}
-        <li>{{ blog }}</li>
+        <li><a href="{% url microblog:edit blog.id %}">{{ blog }}</a></li>
         {% endfor %}
     </ul>
 </body>
