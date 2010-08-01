@@ -1,4 +1,5 @@
 # Django settings for cijug project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -55,7 +56,7 @@ SECRET_KEY = '+dz*a$t$_u34utlxu(wrs!!$++7*9xa_bme1dmrjdpe5zs^0x&'
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -70,7 +71,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '.',
+    '/Users/matthewmorrison/cijug/cijug',
+    '',
 )
 
 INSTALLED_APPS = (
@@ -82,4 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'cijug.microblog',
     'cijug.news',
+    'doj',
 )
+
+#print os.path.dirname(os.path.abspath(__file__))

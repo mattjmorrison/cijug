@@ -1,0 +1,4 @@
+[
+{"model": "auth.user", "pk": 1, "fields": {"password": "sha1$90643$0f62e7f3844a6a32f34c088733628603f402fd70", "is_staff": true, "date_joined": "2010-07-28 23:40:47", "groups": [], "last_login": "2010-07-30 23:08:52", "email": "matt@matt.com", "user_permissions": [], "first_name": "", "username": "matt", "last_name": "", "is_active": true, "is_superuser": true}},
+{"model": "microblog.blog", "pk": 1, "fields": {"user": 1, "message": "xxx"}}
+]
