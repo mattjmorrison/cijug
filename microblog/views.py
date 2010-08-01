@@ -10,9 +10,10 @@ def edit(request, id):
     return shortcuts.render_to_response('edit.html', {'blog_form':forms.BlogForm(instance=instance), 'blog':instance})
 
 def save_edit(request, id):
-    form = forms.BlogForm(request.POST, instance=models.Blog.objects.get(id=id))
+    instance = models.Blog.objects.get(id=id)
+    form = forms.BlogForm(request.POST, instance=instance)
     if form.is_valid():
         form.save()
         return http.HttpResponseRedirect(reverse('microblog:index'))
     else:
-        return shortcuts.render_to_response('edit.html', {'blog_form':form})
+        return shortcuts.render_to_response('edit.html', {'blog_form':form, 'blog':instance})
