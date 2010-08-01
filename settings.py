@@ -67,13 +67,17 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'cijug.urls'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    '/Users/matthewmorrison/cijug/cijug',
-    '',
-)
+if DEBUG:
+    TEMPLATE_DIRS = (
+        '/Users/matthewmorrison/cijug/cijug',
+        '/opt/local/share/java/jython/Lib/site-packages/django/contrib/admin/templates'
+    )
+else:
+    TEMPLATE_DIRS = (
+        '/Users/matthewmorrison/Downloads/apache-tomcat-5.5.30/webapps/cijug/WEB-INF/lib-python/cijug',
+        '/Users/matthewmorrison/Downloads/apache-tomcat-5.5.30/webapps/cijug/WEB-INF/lib-python/django/contrib/admin/templates',
+    )
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
