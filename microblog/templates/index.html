@@ -1,9 +1,16 @@
 {% extends 'microblog/templates/main.html' %}
 {% block content %}
     <div>Hello!!!</div>
-    <ul>
+    <table>
         {% for blog in blogs %}
-        <li><a href="{% url microblog:edit blog.id %}">{{ blog }}</a></li>
+        <tr>
+            <td>
+                <a href="{% url microblog:edit blog.id %}">{{ blog }}</a>
+            </td><td>
+                <a href="{% url microblog:delete blog.id %}">Delete</a>
+            </td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
+    <a href="{% url microblog:add %}">Add New Blog</a>
 {% endblock %}
