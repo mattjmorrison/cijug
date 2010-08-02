@@ -1,0 +1,15 @@
+Start Database
+sudo su postgres80 -c '/opt/local/lib/postgresql80/bin/postmaster -D /opt/local/var/db/postgresql80/defaultdb'
+
+Add Postgresql jdbc driver to classpath
+export CLASSPATH=~/cijug/postgresql-8.4-701.jdbc3.jar
+
+Build War file
+jython ~/cijug/cijug/manage.py war --include-java-libs=$CLASSPATH
+
+Start Tomcat
+~/Downloads/apache-tomcat-5.5.30/bin/startup.sh
+
+Stop Tomcat
+~/Downloads/apache-tomcat-5.5.30/bin/shutdown.sh
+
