@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Microblog</title>
+</head>
+<body>
+    <div>Add!!!</div>
+    <form action="{% url microblog:save_add %}" method="post">
+        {{  blog_form }}
+        <input type="submit" />
+    </form>
+</body>
+</html>
